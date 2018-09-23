@@ -149,10 +149,10 @@ Window {
                 id: cancelButton
                 width: 120
                 fontSize: 14
-                shadowReleasedColor: "#983CFF"
-                shadowPressedColor: "#B32D00"
-                releasedColor: "#813CFF"
-                pressedColor: "#983CFF"
+                shadowReleasedColor: "#61A4CD"
+                shadowPressedColor: "#064261"
+                releasedColor: "#0873AB"
+                pressedColor: "#61A4CD"
                 text: qsTr("Cancel") + translationManager.emptyString
                 KeyNavigation.tab: passwordInput
                 onClicked: {
@@ -164,10 +164,10 @@ Window {
                 id: okButton
                 width: 120
                 fontSize: 14
-                shadowReleasedColor: "#983CFF"
-                shadowPressedColor: "#B32D00"
-                releasedColor: "#813CFF"
-                pressedColor: "#983CFF"
+                shadowReleasedColor: "#61A4CD"
+                shadowPressedColor: "#064261"
+                releasedColor: "#0873AB"
+                pressedColor: "#61A4CD"
                 text: qsTr("Ok")
                 KeyNavigation.tab: cancelButton
                 onClicked: {

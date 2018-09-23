@@ -71,7 +71,7 @@ bool DaemonManager::start(const QString &flags, bool testnet, const QString &dat
 
 
 
-    qDebug() << "starting remixd " + m_monerod;
+    qDebug() << "starting remixd " + m_remixd;
     qDebug() << "With command line arguments " << arguments;
 
     m_daemon = new QProcess();
@@ -82,7 +82,7 @@ bool DaemonManager::start(const QString &flags, bool testnet, const QString &dat
     connect (m_daemon, SIGNAL(readyReadStandardError()), this, SLOT(printError()));
 
     // Start monerod
-    bool started = m_daemon->startDetached(m_monerod, arguments);
+    bool started = m_daemon->startDetached(m_remixd, arguments);
 
     // add state changed listener
     connect(m_daemon,SIGNAL(stateChanged(QProcess::ProcessState)),this,SLOT(stateChanged(QProcess::ProcessState)));
@@ -237,7 +237,7 @@ bool DaemonManager::sendCommand(const QString &cmd,bool testnet, QString &messag
     qDebug() << "sending external cmd: " << external_cmd;
 
 
-    p.start(m_monerod, external_cmd);
+    p.start(m_remixd, external_cmd);
 
     bool started = p.waitForFinished(-1);
     message = p.readAllStandardOutput();
@@ -295,12 +295,12 @@ DaemonManager::DaemonManager(QObject *parent)
 
     // Platform depetent path to monerod
 #ifdef Q_OS_WIN
-    m_monerod = QApplication::applicationDirPath() + "/remixd.exe";
+    m_remixd = QApplication::applicationDirPath() + "/remixd.exe";
 #elif defined(Q_OS_UNIX)
-    m_monerod = QApplication::applicationDirPath() + "/remixd";
+    m_remixd = QApplication::applicationDirPath() + "/remixd";
 #endif
 
-    if (m_monerod.length() == 0) {
+    if (m_remixd.length() == 0) {
         qCritical() << "no daemon binary defined for current platform";
         m_has_daemon = false;
     }

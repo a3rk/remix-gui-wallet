@@ -70,7 +70,7 @@ Rectangle {
     width: (isMobile)? appWindow.width : 260
     color: "#FFFFFF"
 
-    // Item with monero logo
+    // Item with remix logo
     Item {
         visible: !isMobile
         id: logoItem
@@ -256,7 +256,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("Dashboard") + translationManager.emptyString
                 symbol: qsTr("D") + translationManager.emptyString
-                dotColor: "#813CFF"
+                dotColor: "#0873AB"
                 checked: true
                 onClicked: {
                     parent.previousButton.checked = false
@@ -283,7 +283,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("Send") + translationManager.emptyString
                 symbol: qsTr("S") + translationManager.emptyString
-                dotColor: "#813CFF"
+                dotColor: "#0873AB"
                 onClicked: {
                     parent.previousButton.checked = false
                     parent.previousButton = transferButton
@@ -357,7 +357,7 @@ Rectangle {
                 anchors.right: parent.right
                 text: qsTr("History") + translationManager.emptyString
                 symbol: qsTr("H") + translationManager.emptyString
-                dotColor: "#6B0072"
+                dotColor: "#0873AB"
                 onClicked: {
                     parent.previousButton.checked = false
                     parent.previousButton = historyButton

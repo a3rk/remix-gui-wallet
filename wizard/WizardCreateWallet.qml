@@ -38,7 +38,7 @@ ColumnLayout {
     visible: false
 
     Behavior on opacity {
-        NumberAnimation { duration: 100; easing.type: Easing.InQuad }
+        NumberAnimation { duration: 500; easing.type: Easing.InQuad }
     }
 
 

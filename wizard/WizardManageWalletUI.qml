@@ -150,10 +150,10 @@ ColumnLayout {
         StandardButton {
             id: recoverFromSeedButton
             text: qsTr("Restore from seed") + translationManager.emptyString
-            shadowReleasedColor: "#983CFF"
-            shadowPressedColor: "#B32D00"
-            releasedColor: "#813CFF"
-            pressedColor: "#983CFF"
+            shadowReleasedColor: "#61A4CD"
+            shadowPressedColor: "#064261"
+            releasedColor: "#0873AB"
+            pressedColor: "#61A4CD"
             enabled: recoverFromKeys.visible
             onClicked: {
                 recoverFromSeedMode = true;
@@ -164,10 +164,10 @@ ColumnLayout {
         StandardButton {
             id: recoverFromKeysButton
             text: qsTr("Restore from keys") + translationManager.emptyString
-            shadowReleasedColor: "#983CFF"
-            shadowPressedColor: "#B32D00"
-            releasedColor: "#813CFF"
-            pressedColor: "#983CFF"
+            shadowReleasedColor: "#61A4CD"
+            shadowPressedColor: "#064261"
+            releasedColor: "#0873AB"
+            pressedColor: "#61A4CD"
             enabled: recoverFromSeed.visible
             onClicked: {
                 recoverFromSeedMode = false;

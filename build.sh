@@ -46,7 +46,7 @@ source ./utils.sh
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REMIX_DIR=remix
-MONEROD_EXEC=remixd
+REMIXD_EXEC=remixd
 
 MAKE='make -j4'
 if [[ $platform == *bsd* ]]; then
@@ -73,7 +73,7 @@ fi
 if [ "$platform" == "darwin" ]; then
     BIN_PATH=$BIN_PATH/remix-wallet-gui.app/Contents/MacOS/
 elif [ "$platform" == "mingw64" ] || [ "$platform" == "mingw32" ]; then
-    MONEROD_EXEC=remixd.exe
+    REMIXD_EXEC=remixd.exe
 fi
 
 # force version update
@@ -82,16 +82,16 @@ echo "var GUI_VERSION = \"$TAGNAME\"" > version.js
 pushd "$REMIX_DIR"
 get_tag
 popd
-echo "var GUI_MONERO_VERSION = \"$TAGNAME\"" >> version.js
+echo "var GUI_REMIX_VERSION = \"$TAGNAME\"" >> version.js
 
 cd build
 qmake ../remix-wallet-gui.pro "$CONFIG" || exit
 $MAKE || exit
 
-# Copy monerod to bin folder
+# Copy remixd to bin folder
 #if [ "$platform" != "mingw32" ] && [ "$ANDROID" != true ]; then
 if [ "$ANDROID" != true ]; then
-cp ../$REMIX_DIR/bin/$MONEROD_EXEC $BIN_PATH
+cp ../$REMIX_DIR/bin/$REMIXD_EXEC $BIN_PATH
 fi
 
 # make deploy
