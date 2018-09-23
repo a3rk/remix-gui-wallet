@@ -13,13 +13,8 @@ Portions Copyright (c) 2018, A3RK
 
 ## Introduction
 
-TBD
+THIS CODE IS CURRENTLY A WIP (WORK IN PROGRESS) DO NOT USE THIS JUST YET
 
-**Privacy:** Remix Wallet uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
-
-**Security:** Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured. Individual wallets have a 25 word mnemonic seed that is only displayed once, and can be written down to backup the wallet. Wallet files are encrypted with a passphrase to ensure they are useless if stolen.
-
-**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Remix Wallet is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
 
 ## About this Project
 
@@ -29,7 +24,7 @@ TBD
 
 ## License
 
-See [LICENSE](LICENSE).
+TBD
 
 # Contributing
 
@@ -175,11 +170,21 @@ More info: http://stackoverflow.com/a/35098040/1683164
     pacman -S git
     ```
 
-4. Install Qt5 from [official site](https://www.qt.io/download-open-source/)
-   - download unified installer, run and select following options:
-       - Qt > Qt 5.7 > MinGW 5.3.0 32 bit
-       - Tools > MinGW 5.3.0
-   - continue with installation
+4. Install Qt5 into msys2 environment
+   
+   You can install these MSYS2 packages using pacman:
+
+    mingw-w64-i686-qt
+    mingw-w64-i686-qt-creator
+    mingw-w64-x86_64-qt
+    mingw-w64-x86_64-qt-creator
+
+    ```
+    pacman -S git mingw-w64-x86_64-qt mingw-w64-x86_64-qt-creator
+    ```
+
+  Note to launch qtcreator:
+    Open up a MinGW-w64 32-bit or 64-bit shell using the appropriate shortcut in your Start Menu, and run "qtcreator" at the command line.
 
 5. Open ```MinGW-w64 Win32 Shell``` shell
 
@@ -201,13 +206,13 @@ More info: http://stackoverflow.com/a/35098040/1683164
 7. Clone repository
     ```
     cd
-    git clone https://github.com/valiant1x/remixwallet.git
+    git clone https://github.com/a3rk/remix-gui-wallet.git
     ```
 
 8. Build the GUI
     ```
-    cd remixwallet
-    export PATH=$(ls -rd /c/Qt/5.[6,7,8]/mingw53_32/bin | head -1):$PATH
+    cd remix-gui-wallet
+    export PATH=$(ls -rd /c/msys64/mingw64/bin | head -1):$PATH
     ./build.sh
     cd build
     make deploy
