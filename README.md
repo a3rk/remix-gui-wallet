@@ -7,7 +7,7 @@ Portions Copyright (c) 2018, A3RK
 
 ## Development Resources
 
-- Web: [remix.com](https://remixcoin.io/)
+- Web: [remixcoin.io](https://remixcoin.io/)
 - GitHub: [https://github.com/a3rk/remix](https://github.com/a3rk/remix)
 - Discord: [remix on Discord](https://discord.gg/dxWkpGX)
 
@@ -20,15 +20,13 @@ THIS CODE IS CURRENTLY A WIP (WORK IN PROGRESS) DO NOT USE THIS JUST YET
 
 TBD
 
-**Anyone is welcome to contribute to Remix Wallet's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
-
 ## License
 
 TBD
 
 # Contributing
 
-TBD
+**Anyone is welcome to contribute to Remix Wallet's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
 
 ## Installing Remix Wallet Core from a Package
 
