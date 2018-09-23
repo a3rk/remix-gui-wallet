@@ -66,7 +66,7 @@ ColumnLayout {
 
     function checkNextButton() {
         var wordsArray = Utils.lineBreaksToSpaces(uiItem.wordsTextItem.memoText).split(" ");
-        wizard.nextButton.enabled = wordsArray.length === 25;
+        wizard.nextButton.enabled = wordsArray.length === 24;
     }
 
     //! function called each time we hide this page

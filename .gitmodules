@@ -1,3 +1,4 @@
 [submodule "remix"]
 	path = remix
 	url = https://github.com/a3rk/remix
+	branch = dev-gui-wallet-support
