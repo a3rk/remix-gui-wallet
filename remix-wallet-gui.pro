@@ -2,7 +2,7 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-WALLET_ROOT=$$PWD/intense
+WALLET_ROOT=$$PWD/remix
 
 CONFIG += c++11
 
@@ -152,8 +152,8 @@ win32 {
 
     # QMAKE_HOST.arch is unreliable, will allways report 32bit if mingw32 shell is run.
     # Obtaining arch through uname should be reliable. This also fixes building the project in Qt creator without changes.
-    MSYS_HOST_ARCH = $$system(uname -a | grep -o "x86_64")
-
+    #MSYS_HOST_ARCH = $$system(uname -a | grep -o "x86_64")
+    MSYS_HOST_ARCH = x86_64
     # WIN64 Host settings
     contains(MSYS_HOST_ARCH, x86_64) {
         message("Host is 64bit")
@@ -409,7 +409,7 @@ OTHER_FILES += \
 
 DISTFILES += \
     notes.txt \
-    intense/src/wallet/CMakeLists.txt \
+    remix/src/wallet/CMakeLists.txt \
     components/MobileHeader.qml
 
 

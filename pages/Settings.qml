@@ -327,7 +327,7 @@ Rectangle {
                 id: daemonPort
                 Layout.preferredWidth: 100
                 Layout.fillWidth: true
-                text: (daemonAddress !== undefined) ? daemonAddress[1] : "48782"
+                text: (daemonAddress !== undefined) ? daemonAddress[1] : "11331"
                 placeholderText: qsTr("Port") + translationManager.emptyString
             }
         }
@@ -494,7 +494,7 @@ Rectangle {
         TextBlock {
             id: guiMoneroVersion
             Layout.fillWidth: true
-            text: qsTr("Embedded Intensecoin version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
+            text: qsTr("Remix Core Version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
         }
         TextBlock {
             id: restoreHeightText

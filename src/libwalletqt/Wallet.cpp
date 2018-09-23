@@ -25,7 +25,7 @@ namespace {
     static const int WALLET_CONNECTION_STATUS_CACHE_TTL_SECONDS = 5;
 }
 
-class WalletListenerImpl : public  Monero::WalletListener
+class WalletListenerImpl : public  RemixCoin::WalletListener
 {
 public:
     WalletListenerImpl(Wallet * w)
@@ -108,11 +108,11 @@ bool Wallet::testnet() const
 
 void Wallet::updateConnectionStatusAsync()
 {
-    QFuture<Monero::Wallet::ConnectionStatus> future = QtConcurrent::run(m_walletImpl, &Monero::Wallet::connected);
-    QFutureWatcher<Monero::Wallet::ConnectionStatus> *connectionWatcher = new QFutureWatcher<Monero::Wallet::ConnectionStatus>();
+    QFuture<RemixCoin::Wallet::ConnectionStatus> future = QtConcurrent::run(m_walletImpl, &RemixCoin::Wallet::connected);
+    QFutureWatcher<RemixCoin::Wallet::ConnectionStatus> *connectionWatcher = new QFutureWatcher<RemixCoin::Wallet::ConnectionStatus>();
 
-    connect(connectionWatcher, &QFutureWatcher<Monero::Wallet::ConnectionStatus>::finished, [=]() {
-        QFuture<Monero::Wallet::ConnectionStatus> future = connectionWatcher->future();
+    connect(connectionWatcher, &QFutureWatcher<RemixCoin::Wallet::ConnectionStatus>::finished, [=]() {
+        QFuture<RemixCoin::Wallet::ConnectionStatus> future = connectionWatcher->future();
         connectionWatcher->deleteLater();
         ConnectionStatus newStatus = static_cast<ConnectionStatus>(future.result());
         if (newStatus != m_connectionStatus || !m_initialized) {
@@ -324,9 +324,9 @@ PendingTransaction *Wallet::createTransaction(const QString &dst_addr, const QSt
                                               quint64 amount, quint32 mixin_count,
                                               PendingTransaction::Priority priority)
 {
-    Monero::PendingTransaction * ptImpl = m_walletImpl->createTransaction(
+    RemixCoin::PendingTransaction * ptImpl = m_walletImpl->createTransaction(
                 dst_addr.toStdString(), payment_id.toStdString(), amount, mixin_count,
-                static_cast<Monero::PendingTransaction::Priority>(priority));
+                static_cast<RemixCoin::PendingTransaction::Priority>(priority));
     PendingTransaction * result = new PendingTransaction(ptImpl,0);
     return result;
 }
@@ -351,9 +351,9 @@ void Wallet::createTransactionAsync(const QString &dst_addr, const QString &paym
 PendingTransaction *Wallet::createTransactionAll(const QString &dst_addr, const QString &payment_id,
                                                  quint32 mixin_count, PendingTransaction::Priority priority)
 {
-    Monero::PendingTransaction * ptImpl = m_walletImpl->createTransaction(
-                dst_addr.toStdString(), payment_id.toStdString(), Monero::optional<uint64_t>(), mixin_count,
-                static_cast<Monero::PendingTransaction::Priority>(priority));
+    RemixCoin::PendingTransaction * ptImpl = m_walletImpl->createTransaction(
+                dst_addr.toStdString(), payment_id.toStdString(), RemixCoin::optional<uint64_t>(), mixin_count,
+                static_cast<RemixCoin::PendingTransaction::Priority>(priority));
     PendingTransaction * result = new PendingTransaction(ptImpl, this);
     return result;
 }
@@ -377,7 +377,7 @@ void Wallet::createTransactionAllAsync(const QString &dst_addr, const QString &p
 
 PendingTransaction *Wallet::createSweepUnmixableTransaction()
 {
-    Monero::PendingTransaction * ptImpl = m_walletImpl->createSweepUnmixableTransaction();
+    RemixCoin::PendingTransaction * ptImpl = m_walletImpl->createSweepUnmixableTransaction();
     PendingTransaction * result = new PendingTransaction(ptImpl, this);
     return result;
 }
@@ -399,7 +399,7 @@ void Wallet::createSweepUnmixableTransactionAsync()
 UnsignedTransaction * Wallet::loadTxFile(const QString &fileName)
 {
     qDebug() << "Trying to sign " << fileName;
-    Monero::UnsignedTransaction * ptImpl = m_walletImpl->loadUnsignedTx(fileName.toStdString());
+    RemixCoin::UnsignedTransaction * ptImpl = m_walletImpl->loadUnsignedTx(fileName.toStdString());
     UnsignedTransaction * result = new UnsignedTransaction(ptImpl, m_walletImpl, this);
     return result;
 }
@@ -461,7 +461,7 @@ AddressBookModel *Wallet::addressBookModel() const
 
 QString Wallet::generatePaymentId() const
 {
-    return QString::fromStdString(Monero::Wallet::genPaymentId());
+    return QString::fromStdString(RemixCoin::Wallet::genPaymentId());
 }
 
 QString Wallet::integratedAddress(const QString &paymentId) const
@@ -608,15 +608,15 @@ void Wallet::setWalletCreationHeight(quint64 height)
 
 QString Wallet::getDaemonLogPath() const
 {
-    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/intensecoin.log";
+    return QString::fromStdString(m_walletImpl->getDefaultDataDir()) + "/remix.log";
 }
 
 QString Wallet::getWalletLogPath() const
 {
-    return QCoreApplication::applicationDirPath() + "/intensecoin-wallet-gui.log";
+    return QCoreApplication::applicationDirPath() + "/remix-wallet-gui.log";
 }
 
-Wallet::Wallet(Monero::Wallet *w, QObject *parent)
+Wallet::Wallet(RemixCoin::Wallet *w, QObject *parent)
     : QObject(parent)
     , m_walletImpl(w)
     , m_history(nullptr)
@@ -649,7 +649,7 @@ Wallet::~Wallet()
 
     delete m_history;
     m_history = NULL;
-    //Monero::WalletManagerFactory::getWalletManager()->closeWallet(m_walletImpl);
+    //RemixCoin::WalletManagerFactory::getWalletManager()->closeWallet(m_walletImpl);
     delete m_walletImpl;
     m_walletImpl = NULL;
     qDebug("m_walletImpl deleted");

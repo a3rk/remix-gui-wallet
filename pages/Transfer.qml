@@ -273,7 +273,7 @@ Rectangle {
               anchors.rightMargin: 17
               //anchors.leftMargin: 17
               anchors.topMargin: 5
-              placeholderText: "iz..."
+              placeholderText: "REMIX..."
               // validator: RegExpValidator { regExp: /[0-9A-Fa-f]{95}/g }
           }
 /*

@@ -6,11 +6,11 @@
 #include <QMutex>
 #include <QtConcurrent/QtConcurrent>
 
-#include "wallet/wallet2_api.h" // we need to have an access to the Monero::Wallet::Status enum here;
+#include "wallet/wallet2_api.h" // we need to have an access to the RemixCoin::Wallet::Status enum here;
 #include "PendingTransaction.h" // we need to have an access to the PendingTransaction::Priority enum here;
 #include "UnsignedTransaction.h"
 
-namespace Monero {
+namespace RemixCoin {
     class Wallet; // forward declaration
 }
 
@@ -53,17 +53,17 @@ public:
 
 
     enum Status {
-        Status_Ok       = Monero::Wallet::Status_Ok,
-        Status_Error    = Monero::Wallet::Status_Error,
-        Status_Critical = Monero::Wallet::Status_Critical
+        Status_Ok       = RemixCoin::Wallet::Status_Ok,
+        Status_Error    = RemixCoin::Wallet::Status_Error,
+        Status_Critical = RemixCoin::Wallet::Status_Critical
     };
 
     Q_ENUM(Status)
 
     enum ConnectionStatus {
-        ConnectionStatus_Connected       = Monero::Wallet::ConnectionStatus_Connected,
-        ConnectionStatus_Disconnected    = Monero::Wallet::ConnectionStatus_Disconnected,
-        ConnectionStatus_WrongVersion    = Monero::Wallet::ConnectionStatus_WrongVersion
+        ConnectionStatus_Connected       = RemixCoin::Wallet::ConnectionStatus_Connected,
+        ConnectionStatus_Disconnected    = RemixCoin::Wallet::ConnectionStatus_Disconnected,
+        ConnectionStatus_WrongVersion    = RemixCoin::Wallet::ConnectionStatus_WrongVersion
     };
 
     Q_ENUM(ConnectionStatus)
@@ -274,13 +274,13 @@ signals:
 
 private:
     Wallet(QObject * parent = nullptr);
-    Wallet(Monero::Wallet *w, QObject * parent = 0);
+    Wallet(RemixCoin::Wallet *w, QObject * parent = 0);
     ~Wallet();
 private:
     friend class WalletManager;
     friend class WalletListenerImpl;
     //! libwallet's
-    Monero::Wallet * m_walletImpl;
+    RemixCoin::Wallet * m_walletImpl;
     // history lifetime managed by wallet;
     TransactionHistory * m_history;
     // Used for UI history view

@@ -90,7 +90,7 @@ Window {
             }
 
             Text {
-                text: qsTr("Starting Intensecoin daemon in %1 seconds").arg(countDown);
+                text: qsTr("Starting Remix daemon in %1 seconds").arg(countDown);
                 font.pixelSize: 18
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth: true

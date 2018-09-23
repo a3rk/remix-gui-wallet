@@ -20,8 +20,8 @@
     </message>
     <message>
         <location filename="../pages/AddressBook.qml" line="93"/>
-        <source>iz...</source>
-        <translation>iz...</translation>
+        <source>REMIX...</source>
+        <translation>REMIX...</translation>
     </message>
     <message>
         <location filename="../pages/AddressBook.qml" line="102"/>
@@ -117,7 +117,7 @@
     <name>DaemonManagerDialog</name>
     <message>
         <location filename="../components/DaemonManagerDialog.qml" line="93"/>
-        <source>Starting Intensecoin daemon in %1 seconds</source>
+        <source>Starting Remix daemon in %1 seconds</source>
         <translation>Il daemon partirà tra %1 secondi</translation>
     </message>
     <message>
@@ -944,7 +944,7 @@
     </message>
     <message>
         <location filename="../pages/Settings.qml" line="499"/>
-        <source>Embedded Intensecoin version: </source>
+        <source>Remix Core Version: </source>
         <translation>Versione Monero inserita:</translation>
     </message>
     <message>
@@ -1730,8 +1730,8 @@ Ringsize: </source>
     </message>
     <message>
         <location filename="../wizard/WizardMain.qml" line="366"/>
-        <source>USE INTENSECOIN</source>
-        <translation>USA INTENSECOIN</translation>
+        <source>USE REMIX</source>
+        <translation>USA REMIX</translation>
     </message>
     <message>
         <location filename="../wizard/WizardMain.qml" line="383"/>
@@ -1826,8 +1826,8 @@ Ringsize: </source>
     <name>WizardOptions</name>
     <message>
         <location filename="../wizard/WizardOptions.qml" line="87"/>
-        <source>Welcome to Intense Coin!</source>
-        <translation>Benvenuto in Intense Coin!</translation>
+        <source>Welcome to Remix Wallet!</source>
+        <translation>Benvenuto in Remix Wallet!</translation>
     </message>
     <message>
         <location filename="../wizard/WizardOptions.qml" line="98"/>
@@ -1900,8 +1900,8 @@ Ringsize: </source>
     <name>WizardWelcome</name>
     <message>
         <location filename="../wizard/WizardWelcome.qml" line="79"/>
-        <source>Welcome to Intense Coin!</source>
-        <translation>Benvenuto in Intense Coin!</translation>
+        <source>Welcome to Remix Wallet!</source>
+        <translation>Benvenuto in Remix Wallet!</translation>
     </message>
     <message>
         <location filename="../wizard/WizardWelcome.qml" line="89"/>

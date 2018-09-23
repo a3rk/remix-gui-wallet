@@ -125,7 +125,7 @@ Item {
                     id: delegateItem2
                     currentX: x + row2.x
                     currentIndex: index
-                    mainTick: currentIndex === 0
+                    mainTick: currentIndex === 1
                     Component.onCompleted: {
                         row.positions[currentIndex] = delegateItem2
                     }

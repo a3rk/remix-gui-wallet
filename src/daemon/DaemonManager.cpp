@@ -71,7 +71,7 @@ bool DaemonManager::start(const QString &flags, bool testnet, const QString &dat
 
 
 
-    qDebug() << "starting intensecoind " + m_monerod;
+    qDebug() << "starting remixd " + m_monerod;
     qDebug() << "With command line arguments " << arguments;
 
     m_daemon = new QProcess();
@@ -163,9 +163,9 @@ bool DaemonManager::stopWatcher(bool testnet) const
             if(counter >= 5) {
                 qDebug() << "Killing it! ";
 #ifdef Q_OS_WIN
-                QProcess::execute("taskkill /F /IM intensecoind.exe");
+                QProcess::execute("taskkill /F /IM remixd.exe");
 #else
-                QProcess::execute("pkill intensecoind");
+                QProcess::execute("pkill remixd");
 #endif
             }
 
@@ -295,9 +295,9 @@ DaemonManager::DaemonManager(QObject *parent)
 
     // Platform depetent path to monerod
 #ifdef Q_OS_WIN
-    m_monerod = QApplication::applicationDirPath() + "/intensecoind.exe";
+    m_monerod = QApplication::applicationDirPath() + "/remixd.exe";
 #elif defined(Q_OS_UNIX)
-    m_monerod = QApplication::applicationDirPath() + "/intensecoind";
+    m_monerod = QApplication::applicationDirPath() + "/remixd";
 #endif
 
     if (m_monerod.length() == 0) {

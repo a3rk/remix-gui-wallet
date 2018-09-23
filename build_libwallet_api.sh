@@ -11,16 +11,16 @@ source $ROOT_DIR/utils.sh
 
 
 INSTALL_DIR=$ROOT_DIR/wallet
-MONERO_DIR=$ROOT_DIR/intense
+REMIX_DIR=$ROOT_DIR/remix
 
 
-mkdir -p $MONERO_DIR/build/release
-pushd $MONERO_DIR/build/release
+mkdir -p $REMIX_DIR/build/release
+pushd $REMIX_DIR/build/release
 
 # reusing function from "utils.sh"
 platform=$(get_platform)
 
-pushd $MONERO_DIR/build/release/src/wallet
+pushd $REMIX_DIR/build/release/src/wallet
 make -j$CPU_CORE_COUNT
 make install -j$CPU_CORE_COUNT
 popd
@@ -31,7 +31,7 @@ popd
 
 if [ "$platform" != "linux" ]; then
     echo "Building libunbound..."
-    pushd $MONERO_DIR/build/release/external/unbound
+    pushd $REMIX_DIR/build/release/external/unbound
     # no need to make, it was already built as dependency for libwallet
     # make -j$CPU_CORE_COUNT
     make install -j$CPU_CORE_COUNT

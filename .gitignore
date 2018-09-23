@@ -3,3 +3,10 @@
 translations/*.qm
 build
 version.js
+.qmake.stash
+Makefile
+Makefile.Debug
+Makefile.Release
+object_script.remix-wallet-gui.Debug
+object_script.remix-wallet-gui.Release
+qml_qmlcache.qrc

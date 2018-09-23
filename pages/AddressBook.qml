@@ -90,7 +90,7 @@ Rectangle {
         anchors.rightMargin: 17
         anchors.topMargin: 5
         error: true;
-        placeholderText: qsTr("iz...") + translationManager.emptyString
+        placeholderText: qsTr("REMIX...") + translationManager.emptyString
     }
 
     Label {

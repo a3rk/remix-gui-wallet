@@ -42,7 +42,7 @@ import "wizard"
 
 ApplicationWindow {
     id: appWindow
-    title: "Intense Coin"
+    title: "Remix Wallet"
 
     property var currentItem
     property bool whatIsEnable: false
@@ -442,7 +442,7 @@ ApplicationWindow {
         currentWallet.startRefresh();
         daemonRunning = false;
         informationPopup.title = qsTr("Daemon failed to start") + translationManager.emptyString;
-        informationPopup.text  = qsTr("Please check your wallet and daemon log for errors. You can also try to start %1 manually.").arg((isWindows)? "intensecoind.exe" : "intensecoind")
+        informationPopup.text  = qsTr("Please check your wallet and daemon log for errors. You can also try to start %1 manually.").arg((isWindows)? "remixd.exe" : "remixd")
         informationPopup.icon  = StandardIcon.Critical
         informationPopup.onCloseCallback = null
         informationPopup.open();
@@ -726,12 +726,12 @@ ApplicationWindow {
             if (received > 0) {
                 received = received / 1e12
                 if (height == 0) {
-                    informationPopup.text = qsTr("This address received %1 Intensecoin, but the transaction is not yet mined").arg(received);
+                    informationPopup.text = qsTr("This address received %1 Remix, but the transaction is not yet mined").arg(received);
                 }
                 else {
                     var dCurrentBlock = currentWallet.daemonBlockChainHeight();
                     var confirmations = dCurrentBlock - height
-                    informationPopup.text = qsTr("This address received %1 Intensecoin, with %2 confirmation(s).").arg(received).arg(confirmations);
+                    informationPopup.text = qsTr("This address received %1 Remix, with %2 confirmation(s).").arg(received).arg(confirmations);
                 }
             }
             else {
@@ -880,7 +880,7 @@ ApplicationWindow {
         property bool   allow_background_mining : false
         property bool   miningIgnoreBattery : true
         property bool   testnet: false
-        property string daemon_address: testnet ? "localhost:38782" : "localhost:48782"
+        property string daemon_address: testnet ? "localhost:11331" : "localhost:21331"
         property string payment_id
         property int    restore_height : 0
         property bool   is_recovering : false
@@ -1042,7 +1042,7 @@ ApplicationWindow {
 //                PropertyChanges { target: frameArea; blocked: true }
                 PropertyChanges { target: titleBar; visible: true }
 //                PropertyChanges { target: titleBar; y: 0 }
-                PropertyChanges { target: titleBar; title: qsTr("Intense Coin") + translationManager.emptyString }
+                PropertyChanges { target: titleBar; title: qsTr("Remix Wallet") + translationManager.emptyString }
             }
         ]
 
@@ -1384,7 +1384,7 @@ ApplicationWindow {
           var hash = parts[1]
           var user_url = parts[2]
           var auto_url = parts[3]
-          var msg = qsTr("New version of intensecoin-wallet-gui is available: %1<br>%2").arg(version).arg(user_url) + translationManager.emptyString
+          var msg = qsTr("New version of remix-wallet-gui is available: %1<br>%2").arg(version).arg(user_url) + translationManager.emptyString
           notifier.show(msg)
         }
         else {
@@ -1393,7 +1393,7 @@ ApplicationWindow {
     }
 
     function checkUpdates() {
-        walletManager.checkUpdatesAsync("intensecoin-gui", "gui")
+        walletManager.checkUpdatesAsync("remix-gui", "gui")
     }
 
     Timer {

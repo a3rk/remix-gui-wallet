@@ -20,7 +20,7 @@
     </message>
     <message>
         <location filename="../pages/AddressBook.qml" line="93"/>
-        <source>iz...</source>
+        <source>REMIX...</source>
         <translation></translation>
     </message>
     <message>
@@ -117,7 +117,7 @@
     <name>DaemonManagerDialog</name>
     <message>
         <location filename="../components/DaemonManagerDialog.qml" line="93"/>
-        <source>Starting Intensecoin daemon in %1 seconds</source>
+        <source>Starting Remix daemon in %1 seconds</source>
         <translation>모네로 데몬이 %1 초 후 실행됩니다</translation>
     </message>
     <message>
@@ -908,7 +908,7 @@
     </message>
     <message>
         <location filename="../pages/Settings.qml" line="499"/>
-        <source>Embedded Intensecoin version: </source>
+        <source>Remix Core Version: </source>
         <translation>임베디드 모네로 버전:</translation>
     </message>
     <message>
@@ -1738,7 +1738,7 @@ Please upgrade or connect to another daemon</source>
     </message>
     <message>
         <location filename="../wizard/WizardMain.qml" line="366"/>
-        <source>USE INTENSECOIN</source>
+        <source>USE REMIX</source>
         <translation>모네로 사용하기</translation>
     </message>
     <message>
@@ -1834,7 +1834,7 @@ Please upgrade or connect to another daemon</source>
     <name>WizardOptions</name>
     <message>
         <location filename="../wizard/WizardOptions.qml" line="87"/>
-        <source>Welcome to Intense Coin!</source>
+        <source>Welcome to Remix Wallet!</source>
         <translation type="unfinished">모네로에 오신 것을 환영합니다!</translation>
     </message>
     <message>
@@ -1909,7 +1909,7 @@ Please upgrade or connect to another daemon</source>
     <name>WizardWelcome</name>
     <message>
         <location filename="../wizard/WizardWelcome.qml" line="79"/>
-        <source>Welcome to Intense Coin!</source>
+        <source>Welcome to Remix Wallet!</source>
         <translation type="unfinished">모네로에 오신 것을 환영합니다!</translation>
     </message>
     <message>

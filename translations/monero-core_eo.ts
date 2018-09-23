@@ -20,8 +20,8 @@
     </message>
     <message>
         <location filename="../pages/AddressBook.qml" line="93"/>
-        <source>iz...</source>
-        <translation>iz...</translation>
+        <source>REMIX...</source>
+        <translation>REMIX...</translation>
     </message>
     <message>
         <location filename="../pages/AddressBook.qml" line="102"/>
@@ -117,7 +117,7 @@
     <name>DaemonManagerDialog</name>
     <message>
         <location filename="../components/DaemonManagerDialog.qml" line="93"/>
-        <source>Starting Intensecoin daemon in %1 seconds</source>
+        <source>Starting Remix daemon in %1 seconds</source>
         <translation>Komencado de la demono en %1 sekundoj</translation>
     </message>
     <message>
@@ -994,7 +994,7 @@
     </message>
     <message>
         <location filename="../pages/Settings.qml" line="499"/>
-        <source>Embedded Intensecoin version: </source>
+        <source>Remix Core Version: </source>
         <translation>Enkorpigita Monera versio</translation>
     </message>
 </context>
@@ -1731,8 +1731,8 @@ Bonvolu plibonigi aŭ konekti al alia demono</translation>
     </message>
     <message>
         <location filename="../wizard/WizardMain.qml" line="366"/>
-        <source>USE INTENSECOIN</source>
-        <translation>UZU INTENSECOIN</translation>
+        <source>USE REMIX</source>
+        <translation>UZU REMIX</translation>
     </message>
     <message>
         <location filename="../wizard/WizardMain.qml" line="383"/>
@@ -1826,8 +1826,8 @@ Bonvolu plibonigi aŭ konekti al alia demono</translation>
     <name>WizardOptions</name>
     <message>
         <location filename="../wizard/WizardOptions.qml" line="87"/>
-        <source>Welcome to Intense Coin!</source>
-        <translation>Bonvenon al Intense Coin!</translation>
+        <source>Welcome to Remix Wallet!</source>
+        <translation>Bonvenon al Remix Wallet!</translation>
     </message>
     <message>
         <location filename="../wizard/WizardOptions.qml" line="98"/>
@@ -1901,8 +1901,8 @@ Bonvolu plibonigi aŭ konekti al alia demono</translation>
     <name>WizardWelcome</name>
     <message>
         <location filename="../wizard/WizardWelcome.qml" line="79"/>
-        <source>Welcome to Intense Coin!</source>
-        <translation>Bonvenon al Intense Coin!</translation>
+        <source>Welcome to Remix Wallet!</source>
+        <translation>Bonvenon al Remix Wallet!</translation>
     </message>
     <message>
         <location filename="../wizard/WizardWelcome.qml" line="89"/>

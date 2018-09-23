@@ -63,7 +63,7 @@
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     // Send all message types to logger
-    Monero::Wallet::debug(msg.toStdString());
+    RemixCoin::Wallet::debug(msg.toStdString());
 }
 
 int main(int argc, char *argv[])
@@ -75,16 +75,16 @@ int main(int argc, char *argv[])
 //#endif
 
     // Log settings
-    Monero::Wallet::init(argv[0], "intensecoin-wallet-gui");
+    RemixCoin::Wallet::init(argv[0], "remix-wallet-gui");
 //    qInstallMessageHandler(messageHandler);
 
     MainApp app(argc, argv);
 
     qDebug() << "app startd";
 
-    app.setApplicationName("intensecoin-core");
-    app.setOrganizationDomain("getmonero.org");
-    app.setOrganizationName("intensecoin-project");
+    app.setApplicationName("remix");
+    app.setOrganizationDomain("remixcoin.io");
+    app.setOrganizationName("a3rk");
 
     filter *eventFilter = new filter;
     app.installEventFilter(eventFilter);
@@ -185,7 +185,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("isIOS", isIOS);
 
     if (!moneroAccountsRootDir.empty()) {
-        QString moneroAccountsDir = moneroAccountsRootDir.at(0) + "/Intensecoin/wallets";
+        QString moneroAccountsDir = moneroAccountsRootDir.at(0) + "/Remix/wallets";
         engine.rootContext()->setContextProperty("moneroAccountsDir", moneroAccountsDir);
     }
 
@@ -196,7 +196,7 @@ int main(int argc, char *argv[])
         accountName = qgetenv("USERNAME"); // Windows
     }
     if (accountName.isEmpty()) {
-        accountName = "My Intensecoin Account";
+        accountName = "My Remix Account";
     }
 
     engine.rootContext()->setContextProperty("defaultAccountName", accountName);

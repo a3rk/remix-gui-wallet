@@ -206,7 +206,7 @@ before_install:
 
 script:
  # workaround: disable readline for now
- - sed -i.orig 's/option(USE_READLINE "Build with GNU readline support." ON)/option(USE_READLINE "Build with GNU readline support." OFF)/g' intense/CMakeLists.txt
+ - sed -i.orig 's/option(USE_READLINE "Build with GNU readline support." ON)/option(USE_READLINE "Build with GNU readline support." OFF)/g' remix/CMakeLists.txt
  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source /opt/qt510/bin/qt510-env.sh ; fi
  - qmake -v
  - ./build.sh

@@ -1,6 +1,5 @@
 ================================================
-Welcome to Intense Coin!
+Welcome to Remix Wallet!
 ================================================
 
-We are building a blockchain-backed decentralized VPN to make the internet a safer place.
-This package contains everything needed to join the Intense Coin network.
+This package contains everything needed to join the Remix network.
