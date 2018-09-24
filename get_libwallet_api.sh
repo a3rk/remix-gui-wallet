@@ -1,6 +1,6 @@
 #!/bin/bash
-#MONERO_URL=https://github.com/a3rk/remix.git
-#MONERO_BRANCH=dev-gui-wallet-support
+#REMIX_URL=https://github.com/a3rk/remix.git
+#REMIX_BRANCH=dev-gui-wallet-support
 
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
