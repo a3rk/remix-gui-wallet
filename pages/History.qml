@@ -274,10 +274,10 @@ Rectangle {
         anchors.leftMargin: 17
         width: 60
         text: qsTr("Filter") + translationManager.emptyString
-        shadowReleasedColor: "#4D0051"
+        shadowReleasedColor: "#064261"
         shadowPressedColor: "#2D002F"
-        releasedColor: "#6B0072"
-        pressedColor: "#4D0051"
+        releasedColor: "#0873AB"
+        pressedColor: "#064261"
         onClicked:  {
             // Apply filter here;
 
@@ -351,10 +351,10 @@ Rectangle {
         anchors.leftMargin: 17
         anchors.topMargin: 5
         width: 156
-        shadowReleasedColor: "#4D0051"
+        shadowReleasedColor: "#064261"
         shadowPressedColor: "#2D002F"
-        releasedColor: "#6B0072"
-        pressedColor: "#4D0051"
+        releasedColor: "#0873AB"
+        pressedColor: "#064261"
         dataModel: transactionsModel
         z: 1
     }

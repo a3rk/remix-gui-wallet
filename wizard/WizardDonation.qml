@@ -90,7 +90,7 @@ Item {
         wrapMode: Text.Wrap
         //renderType: Text.NativeRendering
         color: "#3F3F3F"
-        text: qsTr("Monero development is solely supported by donations") + translationManager.emptyString
+        text: qsTr("Remix development is solely supported by donations") + translationManager.emptyString
     }
 
     Column {
@@ -131,7 +131,7 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                     font.family: "Arial"
                     font.pixelSize: 18
-                    color: "#6B0072"
+                    color: "#0873AB"
                     text: "50"
                     validator: IntValidator { bottom: 0; top: 100 }
                 }
@@ -162,8 +162,8 @@ Item {
             color: "#4A4646"
             wrapMode: Text.Wrap
             text: qsTr("For every transaction, a small transaction fee is charged. This option lets you add an additional amount, " +
-                       "as a percentage of that fee, to your transaction to support Monero development. For instance, a 50% " +
-                       "autodonation take a transaction fee of 0.005 XMR and add a 0.0025 XMR to support Monero development.")
+                       "as a percentage of that fee, to your transaction to support Remix development. For instance, a 50% " +
+                       "autodonation take a transaction fee of 0.005 RMX and add a 0.0025 XMR to support Remix development.")
                     + translationManager.emptyString
         }
         Column {

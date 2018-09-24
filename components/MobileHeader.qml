@@ -21,7 +21,7 @@ Rectangle {
         anchors.verticalCenterOffset: -5
         anchors.left: parent.left
         anchors.leftMargin: appWindow.persistentSettings.customDecorations ? 20 : 40
-        source: "../images/moneroLogo2.png"
+        source: "../images/remixLogo2.png"
     }
 
     Image {
@@ -31,7 +31,7 @@ Rectangle {
 //                anchors.verticalCenterOffset: -5
         anchors.left: parent.left
         anchors.leftMargin: appWindow.persistentSettings.customDecorations ? 20 : 40
-        source: "../images/moneroIcon.png"
+        source: "../images/remixIcon.png"
     }
 
     Grid {

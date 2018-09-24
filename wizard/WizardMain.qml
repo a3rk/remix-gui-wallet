@@ -313,7 +313,7 @@ ColumnLayout {
 
         width: 50; height: 50
         radius: 25
-        color: prevArea.containsMouse ? "#983CFF" : "#813CFF"
+        color: prevArea.containsMouse ? "#61A4CD" : "#0873AB"
 
         Image {
             anchors.centerIn: parent
@@ -338,7 +338,7 @@ ColumnLayout {
         visible: currentPage > 1 && currentPage < pages.length - 1
         width: 50; height: 50
         radius: 25
-        color: enabled ? nextArea.containsMouse ? "#983CFF" : "#813CFF" : "#DBDBDB"
+        color: enabled ? nextArea.containsMouse ? "#61A4CD" : "#0873AB" : "#DBDBDB"
 
 
         Image {
@@ -361,10 +361,10 @@ ColumnLayout {
         anchors.bottom: parent.bottom
         anchors.margins:  (isMobile) ? 20 : 50
         text: qsTr("USE REMIX") + translationManager.emptyString
-        shadowReleasedColor: "#983CFF"
-        shadowPressedColor: "#B32D00"
-        releasedColor: "#813CFF"
-        pressedColor: "#983CFF"
+        shadowReleasedColor: "#61A4CD"
+        shadowPressedColor: "#064261"
+        releasedColor: "#0873AB"
+        pressedColor: "#61A4CD"
         visible: parent.paths[currentPath][currentPage] === finishPage
         onClicked: {
             wizard.applySettings();
@@ -378,10 +378,10 @@ ColumnLayout {
        anchors.bottom: parent.bottom
        anchors.margins: (isMobile) ? 20 : 50
        text: qsTr("Create wallet") + translationManager.emptyString
-       shadowReleasedColor: "#983CFF"
-       shadowPressedColor: "#B32D00"
-       releasedColor: "#813CFF"
-       pressedColor: "#983CFF"
+       shadowReleasedColor: "#61A4CD"
+       shadowPressedColor: "#064261"
+       releasedColor: "#0873AB"
+       pressedColor: "#61A4CD"
        visible: currentPath === "create_view_only_wallet" &&  parent.paths[currentPath][currentPage] === passwordPage
        enabled: passwordPage.passwordsMatch
        onClicked: {
@@ -410,10 +410,10 @@ ColumnLayout {
        anchors.bottom: parent.bottom
        anchors.margins:  (isMobile) ? 20 : 50
        text: qsTr("Abort") + translationManager.emptyString
-       shadowReleasedColor: "#983CFF"
-       shadowPressedColor: "#B32D00"
-       releasedColor: "#813CFF"
-       pressedColor: "#983CFF"
+       shadowReleasedColor: "#61A4CD"
+       shadowPressedColor: "#064261"
+       releasedColor: "#0873AB"
+       pressedColor: "#61A4CD"
        visible: currentPath === "create_view_only_wallet" &&  parent.paths[currentPath][currentPage] === passwordPage
        onClicked: {
            wizard.restart();
