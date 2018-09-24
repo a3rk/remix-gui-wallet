@@ -34,7 +34,7 @@ DaemonManager *DaemonManager::instance(const QStringList *args)
 
 bool DaemonManager::start(const QString &flags, bool testnet, const QString &dataDir)
 {
-    // prepare command line arguments and pass to monerod
+    // prepare command line arguments and pass to remixd
     QStringList arguments;
 
     // Start daemon with --detach flag on non-windows platforms
@@ -81,7 +81,7 @@ bool DaemonManager::start(const QString &flags, bool testnet, const QString &dat
     connect (m_daemon, SIGNAL(readyReadStandardOutput()), this, SLOT(printOutput()));
     connect (m_daemon, SIGNAL(readyReadStandardError()), this, SLOT(printError()));
 
-    // Start monerod
+    // Start remixd
     bool started = m_daemon->startDetached(m_remixd, arguments);
 
     // add state changed listener
@@ -211,7 +211,7 @@ bool DaemonManager::running(bool testnet) const
     QString status;
     sendCommand("status",testnet, status);
     qDebug() << status;
-    // `./monerod status` returns BUSY when syncing.
+    // `./remixd status` returns BUSY when syncing.
     // Treat busy as connected, until fixed upstream.
     if (status.contains("Height:") || status.contains("BUSY") ) {
         return true;
@@ -293,7 +293,7 @@ DaemonManager::DaemonManager(QObject *parent)
     : QObject(parent)
 {
 
-    // Platform depetent path to monerod
+    // Platform depetent path to remixd
 #ifdef Q_OS_WIN
     m_remixd = QApplication::applicationDirPath() + "/remixd.exe";
 #elif defined(Q_OS_UNIX)

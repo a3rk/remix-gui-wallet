@@ -1,6 +1,6 @@
 #!/bin/bash
-#MONERO_URL=https://github.com/monero-project/monero.git
-#MONERO_BRANCH=master
+#MONERO_URL=https://github.com/a3rk/remix.git
+#MONERO_BRANCH=dev-gui-wallet-support
 
 pushd $(pwd)
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -11,37 +11,11 @@ INSTALL_DIR=$ROOT_DIR/wallet
 REMIX_DIR=$ROOT_DIR/remix
 BUILD_LIBWALLET=false
 
-# init and update monero submodule
+# init and update remix submodule
 if [ ! -d $REMIX_DIR/src ]; then
     git submodule init remix
 fi
 git submodule update --remote
-
-## get monero core tag
-#get_tag
-## create local monero branch
-#git -C $REMIX_DIR checkout -B $VERSIONTAG
-
-# Merge monero PR dependencies
-
-## Workaround for git username requirements
-## Save current user settings and revert back when we are done with merging PR's
-#OLD_GIT_USER=$(git -C $REMIX_DIR config --local user.name)
-#OLD_GIT_EMAIL=$(git -C $REMIX_DIR config --local user.email)
-#git -C $REMIX_DIR config user.name "Monero GUI"
-#git -C $REMIX_DIR config user.email "gui@monero.local"
-## check for PR requirements in most recent commit message (i.e requires #xxxx)
-#for PR in $(git log --format=%B -n 1 | grep -io "requires #[0-9]*" | sed 's/[^0-9]*//g'); do
-#    echo "Merging monero push request #$PR"
-#    # fetch pull request and merge
-#    git -C $REMIX_DIR fetch origin pull/$PR/head:PR-$PR
-#    git -C $REMIX_DIR merge --quiet PR-$PR  -m "Merge monero PR #$PR"
-#    BUILD_LIBWALLET=true
-#done
-#
-## revert back to old git config
-#$(git -C $REMIX_DIR config user.name "$OLD_GIT_USER")
-#$(git -C $REMIX_DIR config user.email "$OLD_GIT_EMAIL")
 
 # Build libwallet if it doesnt exist
 if [ ! -f $REMIX_DIR/lib/libwallet_merged.a ]; then
@@ -49,7 +23,7 @@ if [ ! -f $REMIX_DIR/lib/libwallet_merged.a ]; then
     BUILD_LIBWALLET=true
 # Build libwallet if no previous version file exists
 elif [ ! -f $REMIX_DIR/version.sh ]; then
-    echo "intense/version.h not found - Building libwallet"
+    echo "remix/version.h not found - Building libwallet"
     BUILD_LIBWALLET=true
 ## Compare previously built version with submodule + merged PR's version.
 else
@@ -58,14 +32,14 @@ else
     pushd "$REMIX_DIR"
     get_tag
     popd
-    echo "latest libwallet version: $GUI_MONERO_VERSION"
+    echo "latest libwallet version: $GUI_REMIX_VERSION"
     echo "Installed libwallet version: $VERSIONTAG"
     # check if recent
-    if [ "$VERSIONTAG" != "$GUI_MONERO_VERSION" ]; then
-        echo "Building new libwallet version $GUI_MONERO_VERSION"
+    if [ "$VERSIONTAG" != "$GUI_REMIX_VERSION" ]; then
+        echo "Building new libwallet version $GUI_REMIX_VERSION"
         BUILD_LIBWALLET=true
     else
-        echo "latest libwallet ($GUI_MONERO_VERSION) is already built. Remove remix/lib/libwallet_merged.a to force rebuild"
+        echo "latest libwallet ($GUI_REMIX_VERSION) is already built. Remove remix/lib/libwallet_merged.a to force rebuild"
     fi
 fi
 
@@ -74,7 +48,7 @@ if [ "$BUILD_LIBWALLET" != true ]; then
     exit 0
 fi
 
-echo "GUI_MONERO_VERSION=\"$VERSIONTAG\"" > $REMIX_DIR/version.sh
+echo "GUI_REMIX_VERSION=\"$VERSIONTAG\"" > $REMIX_DIR/version.sh
 
 ## Continue building libwallet
 
@@ -112,7 +86,7 @@ else
 fi
 
 
-echo "cleaning up existing monero build dir, libs and includes"
+echo "cleaning up existing remix build dir, libs and includes"
 #rm -fr $REMIX_DIR/build
 rm -fr $REMIX_DIR/lib
 rm -fr $REMIX_DIR/include
@@ -212,7 +186,7 @@ eval $make_exec  -j$CPU_CORE_COUNT
 eval $make_exec  install -j$CPU_CORE_COUNT
 popd
 
-# Build monerod
+# Build remixd
 # win32 need to build daemon manually with msys2 toolchain
 #if [ "$platform" != "mingw32" ] && [ "$ANDROID" != true ]; then
 if [ "$ANDROID" != true ]; then
