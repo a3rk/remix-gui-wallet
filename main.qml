@@ -881,7 +881,7 @@ ApplicationWindow {
         property bool   allow_background_mining : false
         property bool   miningIgnoreBattery : true
         property bool   testnet: false
-        property string daemon_address: testnet ? "localhost:11331" : "localhost:21331"
+        property string daemon_address: testnet ? "localhost:21331" : "localhost:11331"
         property string payment_id
         property int    restore_height : 0
         property bool   is_recovering : false
