@@ -2,6 +2,7 @@ language: cpp
 branches:
   only:
     - master
+    - dev-ci-updates
 matrix:
   include:
 
