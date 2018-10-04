@@ -50,7 +50,7 @@ No packages are available at the moment. If you would liek to create a pull requ
 
 2. Grab an up-to-date copy of the remixwallet repository
 
-	`git clone https://github.com/valiant1x/remixwallet.git`
+	`git clone https://github.com/a3rk/remix-gui-wallet.git --recursive `
 
 3. Go into the repository
 
@@ -126,7 +126,7 @@ The executable can be found in the build/release/bin folder.
 
 6. Grab an up-to-date copy of the remixwallet repository
 
-  `git clone https://github.com/valiant1x/remixwallet.git`
+  `git clone https://github.com/a3rk/remix-gui-wallet.git --recursive`
 
 7. Go into the repository
 
@@ -204,7 +204,7 @@ More info: http://stackoverflow.com/a/35098040/1683164
 7. Clone repository
     ```
     cd
-    git clone https://github.com/a3rk/remix-gui-wallet.git
+    git clone https://github.com/a3rk/remix-gui-wallet.git --recursive
     ```
 
 8. Build the GUI
