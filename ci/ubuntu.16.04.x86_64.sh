@@ -40,7 +40,7 @@ if [ "$1" = "prep" ]; then
 fi
 
 echo "CI: Building static release..."
-./build.sh release-static
+./build.sh
 if [ $? -ne 0 ]; then
 	echo "CI: Build failed with error code: $?"
 	exit 1
