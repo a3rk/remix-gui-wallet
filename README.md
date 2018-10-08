@@ -30,7 +30,7 @@ TBD
 
 ## Installing Remix Wallet Core from a Package
 
-No packages are available at the moment. If you would liek to create a pull request, packaging for your favorite distribution would be a welcome contribution!
+No packages are available at the moment. If you would like to create a pull request, packaging for your favorite distribution would be a welcome contribution!
 
 ## Compiling Remix Wallet Core from Source
 
@@ -48,13 +48,13 @@ No packages are available at the moment. If you would liek to create a pull requ
 
 	`sudo emerge app-arch/xz-utils app-doc/doxygen dev-cpp/gtest dev-libs/boost dev-libs/expat dev-libs/openssl dev-util/cmake media-gfx/graphviz net-dns/unbound net-libs/ldns net-libs/miniupnpc sys-libs/libunwind`
 
-2. Grab an up-to-date copy of the remixwallet repository
+2. Grab an up-to-date copy of the remix-gui-wallet repository
 
 	`git clone https://github.com/a3rk/remix-gui-wallet.git --recursive `
 
 3. Go into the repository
 
-	`cd remixwallet`
+	`cd remix-gui-wallet`
 
 4. Install the GUI dependencies
 
@@ -98,11 +98,17 @@ No packages are available at the moment. If you would liek to create a pull requ
 
 The executable can be found in the build/release/bin folder.
 
+6. Build the linux64 binary using the ./ci/ubuntu.16.04.x86_64.sh script
+
+  1. First, changed BUILD_GUI_DEPS within the remix/ submodule's CMakeLists.txt file to `ON` instead of `OFF`
+  2. Next, set BUILD_VERSION to the version of the build for the binary, ```export BUILD_VERSION=v#.#.#.#```, which should reflect the version of remix being used as per the remix/ submodule, which can be checked by referring to the .gitmodules file in the root directory
+  3. Finally, run the ./ci/ubuntu.16.04.x86_64.sh script, and find the SHA256 checksum and the .tar.bz2 package containing the linux64 binary within build/release/bin/ accordingly
+
 ### On OS X:
 
 1. Install Xcode from AppStore
 2. Install [homebrew](http://brew.sh/)
-3. Install [remixwallet](https://github.com/valiant1x/remixwallet) dependencies:
+3. Install [remix-gui-wallet](https://github.com/a3rk/remix-gui-wallet) dependencies:
 
   `brew install boost --c++11`
 
@@ -124,13 +130,13 @@ The executable can be found in the build/release/bin folder.
 
     This is the directory where Qt 5.x is installed on **your** system
 
-6. Grab an up-to-date copy of the remixwallet repository
+6. Grab an up-to-date copy of the remix-gui-wallet repository
 
   `git clone https://github.com/a3rk/remix-gui-wallet.git --recursive`
 
 7. Go into the repository
 
-  `cd remixwallet`
+  `cd remix-gui-wallet`
 
 8. Start the build
 

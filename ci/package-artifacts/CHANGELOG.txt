@@ -1,2 +1,5 @@
+v0.1.1.0 - 2018.10.04
+ - integrated upstream changes from a3rk/remix/tree/master, adding working win64 build to
+ 
 v0.1.0.3 - 2018.09.23
- - initial release of remix-gui-wallet for linux64, mac64, win64, and win32
+ - initial release of remix-gui-wallet for linux64, mac64, and win64 
