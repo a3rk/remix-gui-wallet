@@ -495,7 +495,7 @@ Rectangle {
         TextBlock {
             id: guiMoneroVersion
             Layout.fillWidth: true
-            text: qsTr("Remix Core Version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
+            text: qsTr("Remix Core Version: ") + Version.GUI_REMIX_VERSION + translationManager.emptyString
         }
         TextBlock {
             id: restoreHeightText
